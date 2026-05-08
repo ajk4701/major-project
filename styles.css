@@ -118,7 +118,7 @@ body {
 
 .surprise-button {
     background-color: var(--primary-accent);
-    margin-top: 0.5rem auto 0;
+    margin: 0.5rem auto 0;
 }
 
 .surprise-button:hover {
@@ -126,10 +126,11 @@ body {
     transform: translateY(-2px);
 }
 
-.button-icon {
+.search-icon, .surprise-icon, .worth-icon {
     width: 20px;
     height: 20px;
     object-fit: contain;
+    display: block
 }
 
 /*movie card mobile layout*/
@@ -241,7 +242,7 @@ body {
     .search-button{
         width: auto;
         padding-inline: 1.5rem;
-        border-radius: 999px 0 0 999px;
+        border-radius: 999px 0 999px 0;
 
     }
 
