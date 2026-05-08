@@ -72,7 +72,6 @@ body {
 .search-input {
     padding: 0.75rem 1rem;
     width: 100%;
-    max-width: 400px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
     background-color: var(--card-bg);
@@ -130,7 +129,7 @@ body {
     width: 20px;
     height: 20px;
     object-fit: contain;
-    display: block
+    display: block;
 }
 
 /*movie card mobile layout*/
@@ -191,7 +190,10 @@ body {
 }
 
 .worth {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     padding: 0.25rem 0.75rem;
     margin-bottom: 1rem;
     border-radius: 999px;
@@ -242,12 +244,12 @@ body {
     .search-button{
         width: auto;
         padding-inline: 1.5rem;
-        border-radius: 999px 0 999px 0;
+        border-radius: 0 999px 999px 0;
 
     }
 
     .surprise-button {
-        width: 220px;
+        width: 260px;
         padding-inline: 1.5rem;
     }
 
