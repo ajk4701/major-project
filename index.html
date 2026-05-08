@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<!-- meta tags and title -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>What Should I Watch?</title>
+
+	<!-- external and internal CSS -->
+	<link rel="stylesheet" href="styles.css" media="all">
+
+	<!-- external and internal JavaScript -->
+	<script src="scripts.js" defer></script>
+
+</head>
+
+<body>
+<main class="app">
+	<section class="header">
+		<h1 class="title">What Should I Watch?</h1>
+		<p class="description">Search for a movie or click Surprise Me to get a quick recommendation.</p>
+	
+		<form id="searchForm" class="search-area">
+			<input type="text" id="searchInput" class="search-input" placeholder="Search for a movie..." />
+			<button type="submit" class="search-button">Search</button>
+		</form>
+	
+		<button id="surpriseButton" class="surprise-button">Surprise Me</button>
+	</section>
+
+	<section id="movieCard" class="movie-card">
+		<div class="movie-poster">
+			<img id="moviePoster" src="" alt="Movie Poster" />
+		</div>
+
+		<div class="movie-info">
+			<h2 id="movieTitle" class="movie-title">Movie Title</h2>
+			<p class="movie-details">
+				<span id="movieYear">Year</span> 
+				<span id="movieGenre">Genre</span>
+				<span id="movieRating">Rating</span>
+			</p>
+			<p id="worthWatching" class="worth">Worth Watching?</p>
+
+			<p id="movieDescription" class="movie-description">Movie Description</p>
+		</div>
+
+	</section>
+
+</main>
+
+</body>
+</html>
