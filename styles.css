@@ -64,7 +64,7 @@ body {
 /*seach area*/
 .search-area {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 2rem;
 }
@@ -114,11 +114,12 @@ body {
 
 .surprise-button {
     background-color: var(--primary-accent);
+    margin-top: 0.5rem;
 }
 
 .surprise-button:hover {
     filter: brightness(1.1);
-    transform: translate(-2px);
+    transform: translateY(-2px);
 }
 
 /*movie card mobile layout*/
@@ -194,10 +195,6 @@ body {
     color: var(--secondary-text);
 }
 
-.hidden {
-    display: none;
-}
-
 /*desktop layout*/
 @media (min-width: 750px) {
     .app {
@@ -206,6 +203,10 @@ body {
 
     .title {
         font-size: 3rem;
+    }
+
+    .description {
+        font-size: 1.125rem;
     }
 
     .search-area {
@@ -252,4 +253,8 @@ body {
     .movie-details {
         justify-content: flex-start;
     }
+}
+
+.hidden {
+    display: none;
 }
