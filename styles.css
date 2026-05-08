@@ -181,10 +181,75 @@ body {
 .worth {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background-color: var(--secondary-accent);
-    color: var(--main-text);
+    margin-bottom: 1rem;
     border-radius: 999px;
-    font-size: 0.8rem;
+    border: 1px solid var(--secondary-accent);
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--main-text);
     font-weight: 500;
 }
 
+.movie-description {
+    font-size: 0.95rem;
+    color: var(--secondary-text);
+}
+
+.hidden {
+    display: none;
+}
+
+/*desktop layout*/
+@media (min-width: 750px) {
+    .app {
+        padding: 3rem 0;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .search-area {
+        flex-direction: row;
+        max-width: 650px;
+        margin: 0 auto 2rem;
+    }
+
+    .search-input {
+        flex: 1;
+    }
+    
+    .search-button{
+        width: auto;
+        padding-inline: 1.5rem;
+    }
+
+    .surprise-button {
+        width: auto;
+        padding-inline: 1.5rem;
+    }
+
+    .movie-card {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        align-items: center;
+        gap: 2rem;
+        padding: 1.75rem;
+    }
+
+    .movie-poster {
+        max-width: none;
+        min-height: 400px;
+    }
+
+    .movie-info {
+        text-align: left;
+    }
+
+    .movie-title {
+        font-size: 2rem;
+    }
+
+    .movie-details {
+        justify-content: flex-start;
+    }
+}
