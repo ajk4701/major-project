@@ -23,6 +23,29 @@ const movieGenre = document.querySelector("#movieGenre");
 const worthWatching = document.querySelector("#worthWatching");
 const worthIcon = document.querySelector("#worthIcon");
 
+//genre list got from tdmb API on the website
+const genres = {
+    28: "Action",
+    12: "Adventure",
+    16: "Animation",
+    35: "Comedy",
+    80: "Crime",
+    99: "Documentary",
+    18: "Drama",
+    10751: "Family",
+    14: "Fantasy",
+    36: "History",
+    27: "Horror",
+    10402: "Music",
+    9648: "Mystery",
+    10749: "Romance",
+    878: "Science Fiction",
+    10770: "TV Movie",
+    53: "Thriller",
+    10752: "War",
+    37: "Western"
+}
+
 //event listeners
 searchForm.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -106,7 +129,17 @@ function displayMovie(movie) {
     }
 
     //genere
-    movieGenre.textContent = "Genre: ";
+    if (movie.genre_ids && movie.genre_ids.length > 0) {
+        const genreNames = movie.genre_ids
+        .slice(0, 2) //limit to 2 genres
+        .map(id => genres[id])
+        .filter(Boolean)
+        .join(", ");
+
+        movieGenre.textContent = `Genre: ${genreNames}`;
+    } else {
+        movieGenre.textContent = "Genre: N/A";
+    }
 
     //rating
     if (movie.vote_average) {
@@ -139,10 +172,10 @@ function displayMovie(movie) {
 function updateWorthWatching(rating) {
     if (rating >= 7) {
         worthWatching.innerHTML = `<span>Worth Watching?</span>
-        <img id="worthIcon" src="images/thumb-up.png" alt="Thumbs Up">`;
+        <img id="worthIcon" src="images/like.png" alt="Thumbs Up" class="worth-icon">`;
     } else {
         worthWatching.innerHTML = `<span>Worth Watching?</span>
-        <img id="worthIcon" src="images/thumb-down.png" alt="Thumbs Down">`;
+        <img id="worthIcon" src="images/thumb-down.png" alt="Thumbs Down" class="worth-icon">`;
     }
 }
 
@@ -154,9 +187,7 @@ function showMessage(message) {
     movieYear.textContent = "";
     movieGenre.textContent = "";
     movieRating.textContent = "";
-    worthWatching.textContent = "";
-    worthIcon.src = "";
-    worthIcon.alt = "";
+    worthWatching.innerHTML = "";
     movieDescription.textContent = "";
     moviePoster.src = "images/no-image.png";
     moviePoster.alt = "No Poster available";

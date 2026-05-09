@@ -37,9 +37,14 @@ body {
 /*main app container*/
 .app {
     width: min(100% - 2rem, 1000px);
+    min-height: 100vh;
     margin: 0 auto;
     padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
 }
+
+
 
 /* header styles */
 .header {
@@ -143,6 +148,7 @@ body {
     flex-direction: column;
     gap: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
 }
 
 /* poster area*/
@@ -203,10 +209,11 @@ body {
     font-weight: 500;
 }
 
-.worth-icon {
+.worth img, .worth-icon {
     width: 20px;
     height: 20px;
     object-fit: contain;
+    display: block;
 }
 
 .movie-description {
@@ -215,10 +222,10 @@ body {
 }
 
 .tmdb-credit {
-    margin-top: 2rem;
     text-align: center;
     color: var(--secondary-text);
     font-size: 0.75rem;
+    margin-top: auto;
 }
 
 /*desktop layout*/
