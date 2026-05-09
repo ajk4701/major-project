@@ -44,7 +44,7 @@ const genres = {
     53: "Thriller",
     10752: "War",
     37: "Western"
-}
+};
 
 //event listeners
 searchForm.addEventListener("submit", function(event) {
@@ -143,7 +143,7 @@ function displayMovie(movie) {
 
     //rating
     if (movie.vote_average) {
-        movieRating.textContent = `Rating: ${movie.vote_average}/10`;
+        movieRating.textContent = `Rating: ${movie.vote_average.toFixed(1)}/10`;
     } else {
         movieRating.textContent = "No Rating";
     }

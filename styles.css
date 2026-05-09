@@ -226,7 +226,10 @@ body {
     color: var(--secondary-text);
     font-size: 0.75rem;
     margin-top: auto;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
 }
+
 
 /*desktop layout*/
 @media (min-width: 750px) {
