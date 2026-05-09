@@ -214,6 +214,13 @@ body {
     color: var(--secondary-text);
 }
 
+.tmdb-credit {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--secondary-text);
+    font-size: 0.75rem;
+}
+
 /*desktop layout*/
 @media (min-width: 750px) {
     .app {
