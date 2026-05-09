@@ -16,13 +16,12 @@ const surpriseButton = document.querySelector("#surpriseButton");
 const movieCard = document.querySelector("#movieCard");
 const moviePoster = document.querySelector("#moviePoster");
 const movieTitle = document.querySelector("#movieTitle");
-const movieOverview = document.querySelector("#movieOverview");
+const movieDescription = document.querySelector("#movieDescription");
 const movieYear = document.querySelector("#movieYear");
 const movieRating = document.querySelector("#movieRating");
 const movieGenre = document.querySelector("#movieGenre");
 const worthWatching = document.querySelector("#worthWatching");
 const worthIcon = document.querySelector("#worthIcon");
-const movieDescription = document.querySelector("#movieDescription");
 
 //event listeners
 searchForm.addEventListener("submit", function(event) {
@@ -55,10 +54,12 @@ async function searchMovie(searchTerm) {
             showMessage("No movie found. Please try a different title.");
             return;
         }
+        const movie = data.results[0];
+        displayMovie(movie);
 
     } catch (error) {
         console.error("Search error:", error);
-        showMessage("Something went wrong. Please try again later.");
+        showMessage("Something went wrong. Please try again.");
     }
 }
 
@@ -119,9 +120,9 @@ function displayMovie(movie) {
 
     //description
     if (movie.overview) {
-        movieOverview.textContent = movie.overview;
+        movieDescription.textContent = movie.overview;
     } else {
-        movieOverview.textContent = "No description available.";
+        movieDescription.textContent = "No description available.";
     }
 
     //poster
@@ -137,13 +138,11 @@ function displayMovie(movie) {
 //update worth watching message and icon based on rating
 function updateWorthWatching(rating) {
     if (rating >= 7) {
-        worthWatching.textContent = "Worth Watching?";
-        worthIcon.src = "images/like.png";
-        worthIcon.alt = "Thumbs Up";
+        worthWatching.innerHTML = `<span>Worth Watching?</span>
+        <img id="worthIcon" src="images/thumb-up.png" alt="Thumbs Up">`;
     } else {
-        worthWatching.textContent = "Worth Watching?";
-        worthIcon.src = "images/thumb-down.png";
-        worthIcon.alt = "Thumbs Down";
+        worthWatching.innerHTML = `<span>Worth Watching?</span>
+        <img id="worthIcon" src="images/thumb-down.png" alt="Thumbs Down">`;
     }
 }
 
@@ -158,7 +157,7 @@ function showMessage(message) {
     worthWatching.textContent = "";
     worthIcon.src = "";
     worthIcon.alt = "";
-    movieOverview.textContent = "";
-    moviePoster.src = "";
-    moviePoster.alt = "";
+    movieDescription.textContent = "";
+    moviePoster.src = "images/no-image.png";
+    moviePoster.alt = "No Poster available";
 }
